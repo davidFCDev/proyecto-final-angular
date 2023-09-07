@@ -13,4 +13,8 @@ export class TaskComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  deleteTask() {
+    console.log('Delete task', this.task?.title);
+  }
 }
