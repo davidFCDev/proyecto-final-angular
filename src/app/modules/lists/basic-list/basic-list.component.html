@@ -1,3 +1,5 @@
-<p [ngStyle]="{color:'tomato'}">Elements list:</p>
+<p [ngStyle]="{color:'tomato', fontWeight: 'bold'}">Elements list:</p>
 
-<p>We are going to iteract in a list and render some elements</p>
+<p ngClass="underlined">We are going to iteract in a list and render some elements</p>
+
+<p [ngClass]="['underlined', 'big']">Texto con estilo</p>
