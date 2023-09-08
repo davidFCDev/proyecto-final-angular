@@ -1,5 +1,5 @@
 <h4>Your tasks:</h4>
 
 <!-- TODO Replantear con directiva estructural -->
-<app-task [task]="task1"></app-task>
-<app-task [task]="task2"></app-task>
+<app-task (delete)="deleteTask($event)" [task]="task1"></app-task>
+<app-task (delete)="deleteTask($event)" [task]="task2"></app-task>
