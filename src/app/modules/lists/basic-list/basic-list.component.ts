@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basic-list.component.scss'],
 })
 export class BasicListComponent implements OnInit {
-  
-  loading: boolean = false;
+
   elementsList: string[] = [
     'Milk',
     'Bread',
@@ -20,8 +19,15 @@ export class BasicListComponent implements OnInit {
     'Cereal',
     'Eggs',
   ];
+  loading: boolean = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
+
+  changeLoading() {
+    this.loading = !this.loading;
+  }
 }

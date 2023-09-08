@@ -7,3 +7,7 @@
 <p [ngClass]="{underlined: false, big: true}">Texto con estilo</p>
 
 <!-- BLOQUE DE DIRECTIVAS ESTRUCTURALES -->
+
+<p *ngIf="loading">Loading...</p>
+
+<button (click)="changeLoading()">Change loading</button>
