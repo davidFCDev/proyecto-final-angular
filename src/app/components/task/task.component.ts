@@ -16,7 +16,7 @@ export class TaskComponent implements OnInit {
   ngOnInit(): void {}
 
   deleteTask() {
-    console.log('Delete task', this.task?.title);
-    this.delete.emit(this.task) // Notificamos al componente superior la tarea a eliminar
+    // Notificamos al componente superior la tarea a eliminar
+    this.delete.emit(this.task)
   }
 }

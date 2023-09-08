@@ -15,6 +15,9 @@ import { RegisterPageComponent } from './components/pages/register-page/register
 import { ErrorPageComponent } from './components/pages/error-page/error-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// Módulo personalizado que exporta componentes de tipo Lista
+import { ListsModule } from './modules/lists/lists.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +35,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Importamos nuestro módulo personalizado
+    ListsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
