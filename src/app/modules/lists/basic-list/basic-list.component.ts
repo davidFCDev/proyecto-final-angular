@@ -13,6 +13,7 @@ export type Product = {
   styleUrls: ['./basic-list.component.scss'],
 })
 export class BasicListComponent implements OnInit {
+  
   elementsList: Product[] = [
     {
       name: 'Milk',
@@ -30,7 +31,10 @@ export class BasicListComponent implements OnInit {
       description: '12 eggs',
     },
   ];
+
   loading: boolean = false;
+
+  option: number = 0;
 
   constructor() {}
 
