@@ -25,6 +25,13 @@
 
 <!-- BLOQUE USO DE NGFOR -->
 
-<div *ngFor="let product of elementsList">
-  <p>{{ product }}</p>
+<div
+  *ngFor="let product of elementsList"
+  [ngStyle]="{ display: 'flex', gap: '10px' }"
+  [ngClass]="{ big: true }"
+>
+  <p>{{ product.name }}</p>
+  -
+  <p>{{ product.price }}</p>
+  <p>{{ product.description }}</p>
 </div>
