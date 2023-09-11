@@ -1,13 +1,22 @@
-<p [ngStyle]="{color:'tomato', fontWeight: 'bold'}">Elements list:</p>
+<p [ngStyle]="{ color: 'tomato', fontWeight: 'bold' }">Elements list:</p>
 
-<p ngClass="underlined">We are going to iteract in a list and render some elements</p>
+<p ngClass="underlined">
+  We are going to iteract in a list and render some elements
+</p>
 
 <p [ngClass]="['underlined', 'big']">Texto con estilo</p>
 
-<p [ngClass]="{underlined: false, big: true}">Texto con estilo</p>
+<p [ngClass]="{ underlined: false, big: true }">Texto con estilo</p>
 
 <!-- BLOQUE DE DIRECTIVAS ESTRUCTURALES -->
 
 <p *ngIf="loading">Loading...</p>
 
-<button (click)="changeLoading()">Change loading</button>
+<button (click)="(changeLoading)">Change loading</button>
+
+<ng-container *ngIf="loading; else templateName">
+  <p>All OK</p>
+</ng-container>
+<ng-template #templateName>
+  <p>Wait to finish the process</p>
+</ng-template>
