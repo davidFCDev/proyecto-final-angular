@@ -26,12 +26,11 @@
 <!-- BLOQUE USO DE NGFOR -->
 
 <div
-  *ngFor="let product of elementsList"
-  [ngStyle]="{ display: 'flex', gap: '10px' }"
+  *ngFor="let product of elementsList; let i = index; let even = even"
+  [ngStyle]="even ? { background: 'tomato' } : { background: 'lime' }"
   [ngClass]="{ big: true }"
 >
-  <p>{{ product.name }}</p>
-  -
-  <p>{{ product.price }}</p>
+  <p>ID: {{ i + 1 }}</p>
+  <p>{{ product.name }} - {{ product.price }}</p>
   <p>{{ product.description }}</p>
 </div>
