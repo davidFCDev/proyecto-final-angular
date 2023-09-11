@@ -13,7 +13,7 @@ export type Product = {
   styleUrls: ['./basic-list.component.scss'],
 })
 export class BasicListComponent implements OnInit {
-  
+
   elementsList: Product[] = [
     {
       name: 'Milk',
@@ -42,5 +42,9 @@ export class BasicListComponent implements OnInit {
 
   changeLoading() {
     this.loading = !this.loading;
+  }
+
+  selectOption(optionSelected: number) {
+    this.option = optionSelected;
   }
 }

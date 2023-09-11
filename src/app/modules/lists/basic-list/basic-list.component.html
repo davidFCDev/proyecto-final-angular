@@ -43,3 +43,10 @@
   <p [id]="3" *ngSwitchCase="3">Option 3</p>
   <p [id]="4" *ngSwitchDefault>Default option</p>
 </div>
+
+<div>
+  <input type="radio" name="option" (click)="selectOption(1)"/>
+  <input type="radio" name="option" (click)="selectOption(2)"/>
+  <input type="radio" name="option" (click)="selectOption(3)"/>
+  <input type="radio" selected="selected" name="option" (click)="selectOption(0)"/>
+</div>
