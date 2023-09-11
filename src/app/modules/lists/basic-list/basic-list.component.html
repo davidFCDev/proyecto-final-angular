@@ -45,8 +45,27 @@
 </div>
 
 <div>
-  <input type="radio" name="option" (click)="selectOption(1)"/>Option 1
-  <input type="radio" name="option" (click)="selectOption(2)"/>Option 2
-  <input type="radio" name="option" (click)="selectOption(3)"/>Option 3
-  <input type="radio" selected="selected" name="option" (click)="selectOption(0)"/>Ocultar
+  <input type="radio" name="option" (click)="selectOption(1)" />Option 1
+  <input type="radio" name="option" (click)="selectOption(2)" />Option 2
+  <input type="radio" name="option" (click)="selectOption(3)" />Option 3
+  <input
+    type="radio"
+    selected="selected"
+    name="option"
+    (click)="selectOption(0)"
+  />Ocultar
+</div>
+
+<!-- Concatenar directivas -->
+
+<div
+  *ngFor="let product of elementsList; let i = index; let even = even"
+  [ngStyle]="even ? { background: 'tomato' } : { background: 'lime' }"
+  [ngClass]="{ big: true }"
+>
+  <div *ngIf="product.price > 2">
+    <p>ID: {{ i + 1 }}</p>
+    <p>{{ product.name }} - {{ product.price }}</p>
+    <p>{{ product.description }}</p>
+  </div>
 </div>
