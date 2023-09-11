@@ -10,13 +10,15 @@
 
 <!-- BLOQUE DE DIRECTIVAS ESTRUCTURALES -->
 
+<button (click)="changeLoading()">
+  {{ loading ? "Finish load" : "Start load" }}
+</button>
+
 <p *ngIf="loading">Loading...</p>
 
-<button (click)="(changeLoading)">Change loading</button>
-
-<ng-container *ngIf="loading; else templateName">
+<ng-container *ngIf="!loading; else templateWait">
   <p>All OK</p>
 </ng-container>
-<ng-template #templateName>
+<ng-template #templateWait>
   <p>Wait to finish the process</p>
 </ng-template>
