@@ -19,6 +19,8 @@ export class ContactService {
       return contact;
     } else {
       console.log('Contact not found');
+      return undefined; 
     }
   }
+
 }

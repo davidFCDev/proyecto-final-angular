@@ -6,4 +6,19 @@
       <p class="contact" (click)="getContact(contact.id)">{{ contact.name }}</p>
     </div>
   </div>
+
+  <ng-container *ngIf="contactSelected; else noContactSelected">
+    <div class="contact-text">
+      <h3>Datos del contacto</h3>
+      <p>Nombre: {{ contactSelected.name }}</p>
+      <p>Apellidos: {{ contactSelected.surname }}</p>
+      <p>Email: {{ contactSelected.email }}</p>
+      <p>Edad: {{ contactSelected.age }}</p>
+    </div>
+  </ng-container>
+  <ng-template #noContactSelected>
+    <div>
+      <p>No has seleccionado ningún contacto</p>
+    </div>
+  </ng-template>
 </div>
