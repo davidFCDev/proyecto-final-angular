@@ -8,8 +8,13 @@ import { IContact } from '../models/interfaces/contact.interface';
 export class ContactService {
   constructor() {}
 
-  getContacts(): IContact[] {
-    return CONTACTS;
+  getContacts(): Promise<IContact[]> {
+    try {
+      return Promise.resolve(CONTACTS);
+    }
+    catch (error) {
+      return Promise.reject(error);
+    }
   }
 
   getContactById(id: number): IContact | undefined {
@@ -19,7 +24,7 @@ export class ContactService {
       return contact;
     } else {
       console.log('Contact not found');
-      return undefined; 
+      return undefined;
     }
   }
 
