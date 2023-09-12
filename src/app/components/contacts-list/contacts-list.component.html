@@ -1,6 +1,9 @@
-<h3>Contact list</h3>
+<div class="hero">
+  <h3 [ngStyle]="{ fontSize: '40px' }">Contact list</h3>
 
-<div *ngFor="let contact of contactList" class="contact-list">
-  <p class="contact">{{ contact.name }}</p>
-  <p class="contact">{{ contact.email }}</p>
+  <div>
+    <div *ngFor="let contact of contactList" class="contact-list">
+      <p class="contact" (click)="getContact(contact.id)">{{ contact.name }}</p>
+    </div>
+  </div>
 </div>

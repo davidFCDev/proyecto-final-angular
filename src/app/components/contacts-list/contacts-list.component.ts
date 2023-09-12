@@ -17,4 +17,8 @@ export class ContactsListComponent implements OnInit {
 
     this.contactList = this.contactService.getContacts();
   }
+
+  getContact(id: number) {
+    console.log('Obtener contacto con id: ', id);
+  }
 }
