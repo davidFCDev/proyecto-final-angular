@@ -8,7 +8,6 @@ import { ContactService } from 'src/app/services/contact.service';
   styleUrls: ['./contacts-list.component.scss'],
 })
 export class ContactsListComponent implements OnInit {
-
   contactList: IContact[] = [];
   contactSelected: IContact | undefined;
 
@@ -17,7 +16,15 @@ export class ContactsListComponent implements OnInit {
   ngOnInit(): void {
     // Obtener la lista de contactos que brinda el service
 
-    this.contactList = this.contactService.getContacts();
+    this.contactService
+      .getContacts()
+      .then((list: IContact[]) => (this.contactList = list))
+      .catch((error) =>
+        console.error(
+          'Ha ocurrido un error al obtener la lista de contactos:' + error
+        )
+      )
+      .finally(() => console.log('Petición finalizada'));
   }
 
   getContact(id: number) {
