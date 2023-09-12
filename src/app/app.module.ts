@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Módulo personalizado que exporta componentes de tipo Lista
 import { ListsModule } from './modules/lists/lists.module';
+import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ListsModule } from './modules/lists/lists.module';
     HomePageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ContactsListComponent
   ],
   imports: [
     BrowserModule,
