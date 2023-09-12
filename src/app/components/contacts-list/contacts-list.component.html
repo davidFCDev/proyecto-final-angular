@@ -1,1 +1,6 @@
-<p>contacts-list works!</p>
+<h3>Contact list</h3>
+
+<div *ngFor="let contact of contactList" class="contact-list">
+  <p class="contact">{{ contact.name }}</p>
+  <p class="contact">{{ contact.email }}</p>
+</div>
