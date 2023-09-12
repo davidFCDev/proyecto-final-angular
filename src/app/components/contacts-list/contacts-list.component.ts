@@ -8,7 +8,9 @@ import { ContactService } from 'src/app/services/contact.service';
   styleUrls: ['./contacts-list.component.scss'],
 })
 export class ContactsListComponent implements OnInit {
+
   contactList: IContact[] = [];
+  contactSelected: IContact | undefined;
 
   constructor(private contactService: ContactService) {}
 
@@ -19,6 +21,7 @@ export class ContactsListComponent implements OnInit {
   }
 
   getContact(id: number) {
-    console.log('Obtener contacto con id: ', id);
+    // console.log('Obtener contacto con id: ', id);
+    this.contactSelected = this.contactService.getContactById(id);
   }
 }

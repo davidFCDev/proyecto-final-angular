@@ -12,7 +12,7 @@ export class ContactService {
     return CONTACTS;
   }
 
-  getContactById(id: number): IContact | void {
+  getContactById(id: number): IContact | undefined {
     const contact = CONTACTS.find((contact: IContact) => contact.id === id);
 
     if (contact) {
