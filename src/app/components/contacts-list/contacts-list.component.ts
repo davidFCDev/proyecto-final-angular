@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { IContact } from 'src/app/models/interfaces/contact.interface';
 import { ContactService } from 'src/app/services/contact.service';
 
@@ -7,10 +8,14 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.scss'],
 })
-export class ContactsListComponent implements OnInit {
+export class ContactsListComponent implements OnInit, OnDestroy {
   contactList: IContact[] = [];
   contactSelected: IContact | undefined;
 
+  // Suscripción al servicio
+  subscription: Subscription | undefined;
+
+  // Inyectamos el servicio
   constructor(private contactService: ContactService) {}
 
   ngOnInit(): void {
@@ -30,8 +35,13 @@ export class ContactsListComponent implements OnInit {
   getContact(id: number) {
     // console.log('Obtener contacto con id: ', id);
 
-    this.contactService.getContactById(id)?.subscribe((contact: IContact) => {
+    this.subscription = this.contactService.getContactById(id)?.subscribe((contact: IContact) => {
       this.contactSelected = contact;
     });
+  }
+
+  ngOnDestroy(): void {
+    // Nos desuscribimos del observable
+    this.subscription?.unsubscribe();
   }
 }
