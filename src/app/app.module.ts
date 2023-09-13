@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// Importamos el HTTP Client
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,6 +42,8 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
     BrowserAnimationsModule,
     // Importamos nuestro módulo personalizado
     ListsModule,
+    // Importamos el HTTP Client
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
