@@ -7,7 +7,6 @@ import { ContactService } from 'src/app/services/contact.service';
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.scss'],
 })
-
 export class ContactsListComponent implements OnInit {
   contactList: IContact[] = [];
   contactSelected: IContact | undefined;
@@ -31,12 +30,8 @@ export class ContactsListComponent implements OnInit {
   getContact(id: number) {
     // console.log('Obtener contacto con id: ', id);
 
-    this.contactService
-      .getContactById(id)
-      ?.then((contact: IContact) => (this.contactSelected = contact))
-      .catch((error) =>
-        console.error('Ha ocurrido un error al obtener el contacto: ' + error)
-      )
-      .finally(() => console.log('Petición finalizada'));
+    this.contactService.getContactById(id)?.subscribe((contact: IContact) => {
+      this.contactSelected = contact;
+    });
   }
 }
