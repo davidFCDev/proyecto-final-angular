@@ -29,6 +29,6 @@ export class ContactsListComponent implements OnInit {
 
   getContact(id: number) {
     // console.log('Obtener contacto con id: ', id);
-    this.contactSelected = this.contactService.getContactById(id);
+    this.contactService.getContactById(id)?.then((contact: IContact) => this.contactSelected = contact);
   }
 }

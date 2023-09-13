@@ -17,11 +17,11 @@ export class ContactService {
     }
   }
 
-  getContactById(id: number): IContact | undefined {
+  getContactById(id: number): Promise<IContact> | undefined {
     const contact = CONTACTS.find((contact: IContact) => contact.id === id);
 
     if (contact) {
-      return contact;
+      return Promise.resolve(contact);
     } else {
       console.log('Contact not found');
       return undefined;
