@@ -17,6 +17,6 @@ export class AuthService {
     }
 
     // Devolvemos la respuesta del Observable cuando la peticion HTTP termine
-    return this.http.post('http://reqres.in/api/login', body)
+    return this.http.post('https://reqres.in/api/login', body)
   }
 }
