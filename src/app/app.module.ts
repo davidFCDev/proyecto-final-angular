@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { TaskComponent } from './components/task/task.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
-import { LoginFormComponent } from './components/auth/login-form/login-form.component';
-import { RegisterFormComponent } from './components/auth/register-form/register-form.component';
 import { NavBarComponent } from './components/nav/nav-bar/nav-bar.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
@@ -20,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Módulo personalizado que exporta componentes de tipo Lista
 import { ListsModule } from './modules/lists/lists.module';
 import { ContactsListComponent } from './components/contacts-list/contacts-list.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +27,12 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
     TaskComponent,
     TaskFormComponent,
     LoginFormComponent,
-    RegisterFormComponent,
     NavBarComponent,
     HomePageComponent,
     LoginPageComponent,
     RegisterPageComponent,
     ErrorPageComponent,
-    ContactsListComponent
+    ContactsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +44,6 @@ import { ContactsListComponent } from './components/contacts-list/contacts-list.
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

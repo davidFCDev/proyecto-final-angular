@@ -10,9 +10,16 @@ export class LoginFormComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
+    console.log('Componente inicializado');
     this.authService.login('eve.holt@reqres.in', 'cityslicka').subscribe(
       (response) => {
         console.log(response);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        console.log('Petición finalizada');
       }
     );
   }
