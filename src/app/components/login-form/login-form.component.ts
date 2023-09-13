@@ -14,6 +14,7 @@ export class LoginFormComponent implements OnInit {
     this.authService.login('eve.holt@reqres.in', 'cityslicka').subscribe(
       (response) => {
         console.log(response);
+        sessionStorage.setItem('token', response.token);
       },
       (error) => {
         console.log(error);
